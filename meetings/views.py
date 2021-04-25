@@ -21,3 +21,17 @@ def createNewMeeting(request):
     else:
         form = MeetingsForm()   # Form object
     return render(request, 'meetings/newMeeting.html', {'form': form})
+
+
+def createNewRoom(request):
+    RoomsForm = modelform_factory(Rooms, exclude=[])   # Creating form class from model fields
+
+    # Check if form is submitted
+    if request.method == 'POST':
+        form = RoomsForm(request.POST)  # Form object from filled data
+        if form.is_valid():
+            form.save()
+            return redirect('newMeeting')
+    else:
+        form = RoomsForm()   # Form object
+    return render(request, 'meetings/newRoom.html', {'form': form})

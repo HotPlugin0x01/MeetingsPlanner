@@ -5,13 +5,16 @@
 
 <!-- Body Content  -->
 {% block content %}
-<h1>Create New Meeting</h1>
+    <h1>Create New Meeting</h1>
 
-<form method="POST">
-    <table>
-        {{form}}
-    </table>
-    {% csrf_token %}
-    <button type="submit">Add</button>
-</form>
+    <form method="POST">
+        <table>
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <button type="submit">Add Meeting</button>
+    </form>
+    <a href="{% url 'newRoom' %}"><button>Add new Room</button></a>
+    <br>
+    <a href="{% url 'home' %}"><button>Back</button></a>
 {% endblock %}

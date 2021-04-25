@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+<!-- Title  -->
+{% block title %}New Room{% endblock %}
+
+<!-- Body Content  -->
+{% block content %}
+    <h1>Create New Room</h1>
+
+    <form method="POST">
+        <table>
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <button type="submit">Add</button>
+    </form>
+    <a href="{% url 'newRoom' %}"><button>Back</button></a>
+{% endblock %}
