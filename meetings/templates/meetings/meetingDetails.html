@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+<!-- Title  -->
+{% block title %}{{meeting.name}}{% endblock %}
+
+<!-- Body Content  -->
+{% block content %}
+    <h1>{{meeting.name}}</h1>
+    <p>
+        This meeting has been scheduled on {{meeting.date}} at {{meeting.start_time}} in {{meeting.room}}
+    </p>
+{% endblock %}
