@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import showMeetingDetails
+from .views import showMeetingDetails, createNewMeeting
 
 urlpatterns = [
-    path('<int:id>', showMeetingDetails, name='details')
+    path('<int:id>', showMeetingDetails, name='details'),
+    path('NewMeeting', createNewMeeting, name='newMeeting')
 ]

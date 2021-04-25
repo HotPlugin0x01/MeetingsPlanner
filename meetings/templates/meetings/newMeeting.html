@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+<!-- Title  -->
+{% block title %}New Meeting{% endblock %}
+
+<!-- Body Content  -->
+{% block content %}
+<h1>Create New Meeting</h1>
+
+<form method="POST">
+    <table>
+        {{form}}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Add</button>
+</form>
+{% endblock %}
