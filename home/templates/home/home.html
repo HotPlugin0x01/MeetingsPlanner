@@ -6,4 +6,14 @@
 <!-- Body Content -->
 {% block content %}
     <h1>Welcome to Meetings Planner!</h1>
+
+    <!-- Showing List of Meetings -->
+    <h2>Scheduled Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                {{meeting}}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
