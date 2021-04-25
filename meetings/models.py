@@ -6,7 +6,7 @@ from home.models import Rooms
 class Meetings(models.Model):
     name = models.CharField(max_length=150)
     date = models.DateField()
-    start_time = models.TimeField(time(8))
+    start_time = models.TimeField(default=time(8))
     duration = models.IntegerField(default=1)
     room = models.ForeignKey(Rooms, on_delete=models.CASCADE)
 
